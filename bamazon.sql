@@ -14,7 +14,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-  VALUES  ('Pen', 'Office Supplies', 1.50, 75),
+  VALUES  ('Pen', 'Office Supplies', 1.49, 75),
           ('Canon Printer', 'Office Supplies', 349.99, 10),
           ('HP Spectre Laptop', 'Computers', 999.99, 20),
           ('LG 45" TV', 'Electronics', 499.99, 30),
