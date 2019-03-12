@@ -94,6 +94,8 @@ function placeOrder(selectedProduct, selectedUnits) {
 
                 // Close MySQL Connection
                 connection.end();
+                //Exit App
+                process.exit();
             }
         });
     });
@@ -103,7 +105,7 @@ function purchaseProduct(productList) {
 
     function validateNumber(currentUnits) {
         var reg = /^\d+$/;
-        return reg.test(currentUnits) || 'Units should be a number!';
+        return reg.test(currentUnits) || 'Units should be a integer number!';
     }
 
     inquirer.prompt([
@@ -143,7 +145,7 @@ function displayProducts() {
             colWidths: [10, 50, 15]
         });
 
-        // Initialize Array to store Products, will be used in purchaseProduct()
+        // Initialize Array to store Products, will be used for inquirer in purchaseProduct()
         var productList = [];
 
         for (var i=0; i<res.length; i++) {
@@ -157,8 +159,9 @@ function displayProducts() {
         }
 
         consoleOutput = '';
-        consoleOutput += colors.gray('__________________\n\n');
-        consoleOutput += colors.yellow('Products for Sale\n');
+        consoleOutput = '\n';
+        consoleOutput += colors.gray('__________________________\n\n');
+        consoleOutput += colors.magenta('b') + colors.grey('Amazon') + colors.yellow(' Products for Sale\n');
         consoleOutput += table.toString();
         console.log(consoleOutput);
         

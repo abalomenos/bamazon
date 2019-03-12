@@ -19,9 +19,9 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
           ('HP Spectre Laptop', 'Computers', 999.99, 20),
           ('LG 45" TV', 'Electronics', 499.99, 30),
           ('XBox One S', 'Gaming', 249.99, 25),
-          ('PlayStation 4', 'Gaming', 399.99, 20),
+          ('PlayStation 4', 'Gaming', 399.99, 4),
           ('Galaxy S10 Screen Protector', 'Cell Phone Accessories', 12.99, 45),
           ('Pixel 2 Screen Protector', 'Cell Phone Accessories', 9.99, 25),
-          ('HP Spectre Case', 'Computer Accessories', 15.99, 35),
+          ('HP Spectre Case', 'Computer Accessories', 15.99, 3),
           ('Surface Pro Case', 'Computer Accessories', 19.99, 55)
 
