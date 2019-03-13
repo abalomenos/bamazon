@@ -1,5 +1,7 @@
 # bAmazon
-bAmazon is a series of two CLI APPs which utilize Node.js and MySQL, and simulate an Amazon-like storefront. The Customer App will take in orders from customers and deplete stock from the store's inventory. The Manager App will allow the store manager to do various admin tasks such as update current inventory and add new products for sale.
+bAmazon is a series of two CLI APPs which utilize Node.js and MySQL, and simulate an Amazon-like storefront.
+1. The Customer App will take in orders from customers and deplete stock from the store's inventory.
+2. The Manager App will allow the store manager to do various admin tasks such as update current inventory and add new products for sale.
 
 
 ## Demo Customer App
