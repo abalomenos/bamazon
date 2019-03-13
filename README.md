@@ -32,6 +32,7 @@ mysql, inquirer, dotenv, cli-table, colors
 2. Open Git Bash in the root directoy
 3. In the terminal run `npm install`
 4. Wait for Dependencies to install
+4. Setup `.env` file with MySQL connection info - see Note below.
 5. In the terminal run `node bamazonCustomer.js` to view Customer Interface or `node bamazonManager.js` to view Manager Interface
 6. Follow the prompts and enjoy!
 
