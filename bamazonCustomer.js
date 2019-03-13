@@ -22,6 +22,29 @@ var connection = mysql.createConnection({
     database: keys.mysql.database
 });
 
+function exit() {
+
+    // Clear the output
+    consoleOutput = '';
+
+    // Create the output
+    consoleOutput = '';
+    consoleOutput += '\n\n';
+    consoleOutput += colors.red('******************************************\n');
+    consoleOutput += colors.red('*                                        *\n');
+    consoleOutput += colors.red('*') + colors.white('   Thank you for shopping at ') + colors.magenta('b') + colors.grey('Amazon') + colors.white('!   ') + colors.red('*\n');
+    consoleOutput += colors.red('*                                        *\n');
+    consoleOutput += colors.red('******************************************\n');
+
+    // Display it in the terminal
+    console.log(consoleOutput);
+
+    // Close MySQL Connection
+    connection.end();
+    //Exit App
+    process.exit();
+
+}
 
 function placeOrder(selectedProduct, selectedUnits) {
     
@@ -77,25 +100,8 @@ function placeOrder(selectedProduct, selectedUnits) {
             }
             else {
 
-                // Clear the output
-                consoleOutput = '';
-
-                // Create the output
-                consoleOutput = '';
-                consoleOutput += '\n\n';
-                consoleOutput += colors.red('******************************************\n');
-                consoleOutput += colors.red('*                                        *\n');
-                consoleOutput += colors.red('*') + colors.white('   Thank you for shopping at ') + colors.magenta('b') + colors.grey('Amazon') + colors.white('!   ') + colors.red('*\n');
-                consoleOutput += colors.red('*                                        *\n');
-                consoleOutput += colors.red('******************************************\n');
-            
-                // Display it in the terminal
-                console.log(consoleOutput);
-
-                // Close MySQL Connection
-                connection.end();
-                //Exit App
-                process.exit();
+                // Call exit Function to stop App
+                exit();
             }
         });
     });
@@ -170,6 +176,36 @@ function displayProducts() {
     });
 }
 
+function customerAction (selection) {
+
+    // Switch statement based on Manager's selection
+    switch (selection) {
+        case 'Purchase Product':
+            // Start the App
+            displayProducts();
+            break;
+        case 'Exit':
+            // Call exit Function to stop App
+            exit();
+            break;
+    }
+}
+
+function displayOptions() {
+
+    inquirer.prompt([
+        {
+            type: 'list',
+            message: 'Select Admin Action',
+            choices: ['Purchase Product', 'Exit'],
+            name: 'selectedAction'
+        }
+    ]).then(function(answers){
+
+        customerAction(answers.selectedAction);
+
+    });
+}
 
 function initialize() {
 
@@ -191,7 +227,7 @@ function initialize() {
     console.log(consoleOutput);
 
     // Start the App
-    displayProducts();
+    displayOptions();
 
 }
 

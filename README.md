@@ -2,9 +2,12 @@
 bAmazon is a series of CLI APPs that utilize Node.js and MySQL and simulate an Amazon-like storefront.
 
 
-## Demo
-![Demo](demo/demo.gif "bAmazon Demo")
+## Demo Customer App
+![DemoCustomer](demo/demoCustomer.gif "bAmazon Customer Demo")
 
+
+## Demo Manager App
+![DemoManager](demo/demoManager.gif "bAmazon Manager Demo")
 
 ## Technologies
 
